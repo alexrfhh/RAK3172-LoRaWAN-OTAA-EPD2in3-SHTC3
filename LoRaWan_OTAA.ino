@@ -1,12 +1,11 @@
 #include "SparkFun_SHTC3.h"
-#include "image.h"
-#include "epd2in13.h"
-#include "epdpaint.h"
-
+#define FONT16 true
+#include "rak14000.h"
 
 #define OTAA_PERIOD (10000)
 
- #define OTAA_DEVEUI                                \
+
+#define OTAA_DEVEUI                                \
    {                                                \
      0xAC, 0x1F, 0x09, 0xFF, 0xFE, 0x05, 0x2F, 0x45 \
    }
