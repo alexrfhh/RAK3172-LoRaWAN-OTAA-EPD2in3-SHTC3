@@ -39,6 +39,7 @@
 #ifndef _EPDFONTS_H_
 #define _EPDFONTS_H_
 
+
 /* Max size of bitmap will based on a font24 (17x24) */
 #define MAX_HEIGHT_FONT         24
 #define MAX_WIDTH_FONT          17
@@ -46,6 +47,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
+#include "defines-epd.h"
 
 struct sFONT {
   const uint8_t *table;

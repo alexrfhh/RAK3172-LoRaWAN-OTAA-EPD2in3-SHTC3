@@ -37,14 +37,14 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "epdfonts.h"
+#include "defines-epd.h"
 #include <avr/pgmspace.h>
-#include "rak14000.h"
 
 // 
 //  Font data for Courier New 12pt
 // 
 
-#ifdef FONT16 
+#ifdef FONT16
 
 const uint8_t Font16_Table[] PROGMEM = 
 {
@@ -1759,12 +1759,13 @@ const uint8_t Font16_Table[] PROGMEM =
 	0x00, 0x00, //            
 };
 
-#endif
 
 sFONT Font16 = {
   Font16_Table,
   11, /* Width */
   16, /* Height */
 };
+
+#endif
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

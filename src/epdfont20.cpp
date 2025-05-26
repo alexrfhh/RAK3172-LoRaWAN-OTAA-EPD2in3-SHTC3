@@ -37,6 +37,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "epdfonts.h"
+#include "defines-epd.h"
 #include <avr/pgmspace.h>
 
 #ifdef FONT20

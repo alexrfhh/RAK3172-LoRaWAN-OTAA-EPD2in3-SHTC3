@@ -1,9 +1,8 @@
 #include "SparkFun_SHTC3.h"
-#define FONT16 true
-#include "rak14000.h"
+#include "src/rak14000.h"
+
 
 #define OTAA_PERIOD (10000)
-
 
 #define OTAA_DEVEUI                                \
    {                                                \
