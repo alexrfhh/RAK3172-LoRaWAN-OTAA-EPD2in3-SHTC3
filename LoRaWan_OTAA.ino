@@ -1,7 +1,6 @@
 #include "SparkFun_SHTC3.h"
 #include "src/rak14000.h"
 
-
 #define OTAA_PERIOD (10000)
 
 #define OTAA_DEVEUI                                \
@@ -126,29 +125,19 @@ void setup_lorawan()
 
 }
 
-void errorDecoder(SHTC3_Status_TypeDef message)                             // The errorDecoder function prints "SHTC3_Status_TypeDef" resultsin a human-friendly way
+void rak14000_text(int16_t x, int16_t y, char *text)
 {
-  switch(message)
-  {
-    case SHTC3_Status_Nominal : Serial.println("OK - EPD"); break;
-    case SHTC3_Status_Error : Serial.println("Error - EPD"); break;
-    case SHTC3_Status_CRC_Fail : Serial.println("CRC Fail - EPD"); break;
-    default : Serial.println("Unknown return code - EPD"); break;
-  }
+	sFONT *use_font;
+	use_font = &Font16;
+	paint.DrawStringAt(x, y, text, use_font, 0);
 }
+
 
 void clear_rak14000(void)
 {
 	paint.SetRotate(ROTATE_270);
 	display.Init(FULL);
 	paint.Clear(1);
-}
-
-void rak14000_text(int16_t x, int16_t y, char *text)
-{
-	sFONT *use_font;
-	use_font = &Font16;
-	paint.DrawStringAt(x, y, text, use_font, 0);
 }
 
 void print_epd(char* text)
@@ -160,6 +149,17 @@ void print_epd(char* text)
   rak14000_text(0, 5,(char*)upcount);
   rak14000_text(0, 30, (char*) text);
   display.Display(image);
+}
+
+void errorDecoder(SHTC3_Status_TypeDef message)                             // The errorDecoder function prints "SHTC3_Status_TypeDef" resultsin a human-friendly way
+{
+  switch(message)
+  {
+    case SHTC3_Status_Nominal : Serial.println("OK - EPD"); break;
+    case SHTC3_Status_Error : Serial.println("Error - EPD"); break;
+    case SHTC3_Status_CRC_Fail : Serial.println("CRC Fail - EPD"); break;
+    default : Serial.println("Unknown return code - EPD"); break;
+  }
 }
 
 void setup()
@@ -240,7 +240,6 @@ void uplink_routine()
     Serial.println("Can't send uplink, device not joined");
   }
 }
-
 
 void loop()
 {
