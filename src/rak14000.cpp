@@ -5,5 +5,4 @@
 #include "rak14000.h"
 
 
-
 #endif //RAK14000_C

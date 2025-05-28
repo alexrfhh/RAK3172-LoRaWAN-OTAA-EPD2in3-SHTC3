@@ -1,11 +1,12 @@
 
 
-#include <Arduino.h>
 
 
 
 #ifndef _EPD_H_
 #define _EPD_H_
+
+#include <Arduino.h>
 
 #include "image.h"
 #include "epdif.h"

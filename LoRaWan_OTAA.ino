@@ -132,7 +132,6 @@ void rak14000_text(int16_t x, int16_t y, char *text)
 	paint.DrawStringAt(x, y, text, use_font, 0);
 }
 
-
 void clear_rak14000(void)
 {
 	paint.SetRotate(ROTATE_270);
@@ -174,8 +173,6 @@ void setup()
   errorDecoder(mySHTC3.begin());
 
   setup_lorawan();
-
-  //display.Clear();
 
   clear_rak14000();
 
